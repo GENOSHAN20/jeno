@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    /* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.body4 {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.heading4 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.condent4 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.condent4 input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.condent4 input:focus {
+  border-color: #4CAF50;
+}
+
+#login4 {
+  margin-top: 1rem;
+}
+
+.login4 {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login4:hover {
+  background-color: #45a049;
+}
+
+#desc4 {
+  font-size: 14px;
+  margin-top: 1rem;
+}
+
+.desc4 {
+  font-size: 12px;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+#desc4 a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+#desc4 a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <div class="body4">
+    <h2 class="heading4">Login</h2>
+    <form action="login.php" method="POST">
+      <div class="condent4">
+        <div class="username4">
+          <input type="text" name="username" placeholder="Enter Username" required>
+        </div>
+        <div class="email4">
+          <input type="email" name="email" placeholder="Enter Email" required>
+        </div>
+        <div class="password4">
+          <input type="password" name="password" placeholder="Enter Password" required>
+        </div>
+        <div id="login4">
+          <button class="login4" type="submit">Login</button>
+        </div>
+        <div>
+          <p id="desc4">If you are a new customer, <a href="register.html">create a new account</a></p>
+          <p class="desc4">By logging in, you agree to our terms of service and <br> privacy policy.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+    // Wait for the DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+    // Get the form and input elements
+    const loginForm = document.querySelector("form");
+    const usernameInput = document.querySelector(".username4 input");
+    const emailInput = document.querySelector(".email4 input");
+    const passwordInput = document.querySelector(".password4 input");
+  
+    // Add an event listener for form submission
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+  
+      // Get the trimmed values from the input fields
+      const username = usernameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+  
+      // Validate fields
+      if (!username || !email || !password) {
+        alert("All fields are required. Please fill them out.");
+        return;
+      }
+  
+      // Validate email format
+      if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+  
+      // If all validations pass, redirect to order.html
+      alert("Login successful!");
+      window.location.href = "order.html";
+    });
+  
+    // Helper function to validate email format
+    function validateEmail(email) {
+      // Simple email validation using a regex pattern
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  });
+  
+  </script>
+</body>
+</html>
