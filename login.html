@@ -96,7 +96,10 @@ body {
 #desc4 a:hover {
   text-decoration: underline;
 }
-
+div a{
+  text-decoration: none;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -114,7 +117,7 @@ body {
           <input type="password" name="password" placeholder="Enter Password" required>
         </div>
         <div id="login4">
-          <button class="login4" type="submit">Login</button>
+          <button class="login4" type="submit"><a href="ex2.html">Login</a></button>
         </div>
         <div>
           <p id="desc4">If you are a new customer, <a href="register.html">create a new account</a></p>
@@ -155,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       // If all validations pass, redirect to order.html
       alert("Login successful!");
-      window.location.href = "order.html";
+      //window.location.href = "order.html";
     });
   
     // Helper function to validate email format

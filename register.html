@@ -81,14 +81,17 @@ input:focus {
 .register-button:hover {
   background: #45a049;
 }
-
+div a{
+  text-decoration: none;
+  color: white;
+}
 
   </style>
 </head>
 <body>
   <div class="register-container">
     <h1>Create Account</h1>
-    <form class="register-form">
+    <form class="register-form" action="register.php" method="POST">
       <div class="form-group">
         <label for="fullname">Full Name</label>
         <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
@@ -106,7 +109,7 @@ input:focus {
         <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
       </div>
       <button type="submit" class="register-button">Register</button>
-      
+
     </form>
   </div>
   <script>
